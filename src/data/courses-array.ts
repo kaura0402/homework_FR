@@ -1,9 +1,6 @@
-#yiugR7&TF
+import type {ISourseModel} from "../model/SourseModel.ts";
 
-з arrays.js взяти масиви coursesArray. Створити необхідні моделі та компоненти для того, щоб повноцінно відобразити його
-
-Стилізація довільна, але обов’язково підключена і мінімально зроблена (хоча б один стиль, який працює).
-let coursesArray = [
+const coursesArray: ISourseModel[] = [
     {
         title: 'JavaScript Complex',
         monthDuration: 5,
@@ -72,3 +69,4 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
+export default coursesArray;
