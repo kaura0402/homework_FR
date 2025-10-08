@@ -1,0 +1,8 @@
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    align-items: center;
+    list-style: none;
+}
