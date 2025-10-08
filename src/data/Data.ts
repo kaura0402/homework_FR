@@ -1,4 +1,6 @@
-let simpsons = [
+import type {ICharacter} from "../models/ICharacter.ts";
+
+export const simpsons: ICharacter[] = [
     {
         name: 'Bart',
         surname: 'Simpson',
@@ -35,14 +37,3 @@ let simpsons = [
         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
     },
 ];
-#kLZQR7Q98
-
-з arrays.js взяти масив simpsons.
-
-Кореневим компонентом є App
-
-Створити компонент CharacterComponent, який буде містити всю інформацію щодо окремого об’єкту масиву. Розмітка компонента довільна. Опис персонажу передати через children.
-
-Створити компонент FamilyComponent, в якому буде відбуватись ітерація по масиву simpsons.
-
-Стилізація довільна, але обов’язково підключена і мінімально зроблена (хоча б один стиль, який працює).
