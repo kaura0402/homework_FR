@@ -1,0 +1,3 @@
+VITE_API_URL=https://jsonplaceholder.typicode.com/
+#todos
+#rename file 'env' to '.env'
