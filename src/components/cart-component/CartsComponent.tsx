@@ -11,6 +11,7 @@ export const CartsComponent = () => {
 
     const [carts, setCarts] = useState<ICart[]>([]);
 
+
     useEffect(() => {
         cartService.getCartOfUsers(id)
             .then(({carts}: ICartResponsModel) => {
