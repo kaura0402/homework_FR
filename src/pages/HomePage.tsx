@@ -1,7 +1,7 @@
 export const HomePage = () => {
     return (
         <div>
-            Home Page
+            Home Work 4
         </div>
     );
 };
