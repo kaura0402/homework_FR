@@ -1,14 +1,9 @@
-import {useEffect} from "react";
+import  AuthResourcesComponent from "../components/AuthResourcesComponent.tsx";
 
 export const AuthResourcesPage = () => {
-
-    useEffect(() => {
-        // loadAuthProducts()
-    }, []);
-
     return (
-        <>
-            AuthResourcesPage
-        </>
+        <div>
+            <AuthResourcesComponent/>
+        </div>
     );
 };
