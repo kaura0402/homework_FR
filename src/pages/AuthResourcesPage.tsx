@@ -4,6 +4,7 @@ export const AuthResourcesPage = () => {
     return (
         <div>
             <AuthResourcesComponent/>
+
         </div>
     );
 };

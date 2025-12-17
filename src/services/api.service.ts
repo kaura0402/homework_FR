@@ -5,7 +5,7 @@ import type {IProductsRespounsModel} from "../models/IProductsRespounsModel.ts";
 import {retriveLocalStorage} from "./helpers.ts"
 import type {ITokenPair} from "../models/ITokenPair.ts";
 
-type LoginData = {
+interface ILoginData {
     username: string;
     password: string;
     expiresInMins: number;
@@ -25,13 +25,14 @@ axiosInstance.interceptors.request.use((requestObject) => {
 
 // постовий запит
 
-export const login = async ({username, password, expiresInMins}: LoginData):
+export const login = async ({username, password, expiresInMins}: ILoginData):
     Promise<IUserWithToken> => {
     const {data: userWithToken} = await axiosInstance.post<IUserWithToken>('/login', {
         username,
         password,
         expiresInMins
     });
+    console.log(userWithToken);
     localStorage.setItem("user", JSON.stringify(userWithToken));
     return userWithToken
 }
