@@ -10,8 +10,8 @@ export const routes = createBrowserRouter([
         path: '/', element: <MainLayout/>,
         children: [
             {index: true, element: <HomePage/>},
-            {path: 'login', element: <LoginPage/>},
-            {path: '/auth/resources', element: <AuthResourcesPage/>}
+            {path: 'login', element: <LoginPage/>}, // сторинка аунтефікації
+            {path: '/auth/resources', element: <AuthResourcesPage/>} //сторинка поновлення токена
         ]
     }
 ])

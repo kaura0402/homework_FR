@@ -4,14 +4,11 @@ import type {IProducts} from "../models/IProduct.ts";
 import type {IProductsRespounsModel} from "../models/IProductsRespounsModel.ts";
 import {retriveLocalStorage} from "./helpers.ts"
 import type {ITokenPair} from "../models/ITokenPair.ts";
+import type {ILoginData} from "../models/ILoginData.ts";
 
-interface ILoginData {
-    username: string;
-    password: string;
-    expiresInMins: number;
-}
 
-const axiosInstance = axios.create({
+
+const axiosInstance = axios.create({  //формуємо базову URL
     baseURL: "https://dummyjson.com/auth",
     headers: {}
 })
@@ -20,7 +17,7 @@ axiosInstance.interceptors.request.use((requestObject) => {
     if (requestObject.method?.toUpperCase() === 'GET') {
         requestObject.headers.Authorization = 'Bearer ' + retriveLocalStorage<IUserWithToken>('user').accessToken;
     }
-    return requestObject;
+    return requestObject;  // get запити
 })
 
 // постовий запит
@@ -34,16 +31,16 @@ export const login = async ({username, password, expiresInMins}: ILoginData):
     });
     console.log(userWithToken);
     localStorage.setItem("user", JSON.stringify(userWithToken));
-    return userWithToken
+    return userWithToken  // отримання токена
 }
 
 // гет запит
 
 export const getAuthProducts = async (): Promise<IProducts[]> => {
     const {data: {products}} = await axiosInstance.get<IProductsRespounsModel>('/products', {});
-    return products;
+    return products; // запит на аутентіфіковані продукти
 };
-
+// отримання нових токенів.
 export const refresh = async () => {
     const IUserWithToken = retriveLocalStorage<IUserWithToken>('user');
     const {data: {accessToken, refreshToken}} = await axiosInstance.post<ITokenPair>('/refresh', {

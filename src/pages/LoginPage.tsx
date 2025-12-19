@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {login} from "../services/api.service.ts";
+import {LoginComponent} from "../components/LoginComponent.tsx";
 
 export const LoginPage = () => {
     useEffect(() => {
@@ -10,8 +11,8 @@ export const LoginPage = () => {
         })
     }, []);
     return (
-        <>
-        Login Page
-        </>
+        <div>
+        <LoginComponent/>
+        </div>
     );
 };

@@ -1,3 +1,4 @@
+// Get all products модель продуктів
 export interface IProducts {
     id: number;
     title: string;
