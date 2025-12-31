@@ -24,23 +24,23 @@ if(!comments.length){
             {users.map((user) => (
                 <div key={user.id}>
                     {/* 1. Виводимо дані користувача */}
-                    <h2>Користувач: {user.name} 👤</h2>
+                    <h2>User:ID = {user.id} {user.name} 👤</h2>
 
                     {/* 2. Фільтруємо та виводимо його пости */}
-                    <h3>Пости:</h3>
+                    <h3>Posts:</h3>
                     {posts
                         .filter(post => post.userId === user.id)
                         .map(post => (
-                            <div key={post.id} style={{ marginLeft: '20px' }}>
-                                <h4>{post.title} 📝</h4>
+                            <div key={post.id} >
+                                <h4>UserId = {post.userId}  postId={post.id}{post.title} 📝</h4>
 
                                 {/* 3. Фільтруємо та виводимо коментарі до цього поста */}
-                                <p>Коментарі:</p>
+                                <p>Comments:</p>
                                 {comments
                                     .filter(comment => comment.postId === post.id)
                                     .map(comment => (
-                                        <div key={comment.id} style={{ marginLeft: '40px' }}>
-                                            💬 {comment.body}
+                                        <div key={comment.id} >
+                                            💬 comentId {comment.id} /{comment.body}
                                         </div>
                                     ))}
                             </div>
